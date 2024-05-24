@@ -1,0 +1,35 @@
+save;
+
+$PathDir = "\x22" + leftstr(filename2, strlen(filename2)-strlen(basename2)) + "\x22";
+$PathExe = "\x22" + leftstr(filename2, strlen(filename2)-strlen(filetype)) + ".cmd\x22";
+$PathInp = "\x22" + filename2 + "\x22";
+
+//message $PathDir;
+//message $PathExe;
+//message $PathInp;
+//if (existfile(leftstr(filename2, strlen(filename2)-strlen(filetype)) + ".cmd")) {
+
+if (filetype==".cmd") {
+	runex "\x22" + filename2 + "\x22", 0, 0, "", 7, "", 1, "",0 , "", 2, 0, 0;
+} else if (filetype==".py") {
+//	run "RunScript.exe " + $PathDir + " python.exe " + $PathInp;
+	runex "Python.exe \x22" + filename2 + "\x22", 0, 0, "", 7, "", 1, "",0 , "", 2, 0, 0;
+} else if (filetype==".m") {
+	run "RunMatlab.exe " + "\x22%d\x22 " + leftstr(basename2, strlen(basename2)-strlen(filetype));
+} else if (filetype==".uws") {
+//	runex "K:\\UWSC\\UWSC.exe \x22" + filename2 + "\x22", 0, 0, "", 7, "", 1, "",0 , "", 2, 0, 0;
+	run "RunScript.exe " + $PathDir + " K:\\UWSC\\UWSC.exe " + $PathInp;
+} else if (filetype==".tex") {
+//	runex $PathEXE, 0, 0, "", 7, "", 1, "",0 , "", 2, 0, 0;
+	run "RunScript.exe " + $PathDir + " " + $PathExe;
+} else if (filetype==".ps1") {
+	runex "powershell -NoProfile -ExecutionPolicy Unrestricted -File \x22" + filename2 + "\x22", 0, 0, "", 7, "", 1, "",0 , "", 2, 0, 0;
+} else if (filetype==".sh") {
+	runex "wsl \x22./" + basename2 + "\x22", 0, 0, "", 7, "", 1, "",0 , "", 2, 0, 0;
+}
+
+endmacro;
+
+reopen;
+windowhorz;
+
