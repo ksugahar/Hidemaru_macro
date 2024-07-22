@@ -2,8 +2,10 @@
 ---
 ## インストール
 ---
+```
 git clone https://github.com/ksugahar/Hidemaru_macro.git .
-
+```
+を実行した後に，
 
 ```
 秀丸設定.reg
