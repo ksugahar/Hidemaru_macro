@@ -24,8 +24,6 @@ if (filetype==".cmd") {
 	run "RunScript.exe " + $PathDir + " " + $PathExe;
 } else if (filetype==".ps1") {
 	runex "powershell -NoProfile -ExecutionPolicy Unrestricted -File \x22" + filename2 + "\x22", 0, 0, "", 7, "", 1, "",0 , "", 2, 0, 0;
-} else if (filetype==".sh") {
-	runex "wsl \x22./" + basename2 + "\x22", 0, 0, "", 7, "", 1, "",0 , "", 2, 0, 0;
 }
 
 endmacro;
