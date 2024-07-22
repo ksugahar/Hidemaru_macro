@@ -9,6 +9,7 @@ git clone https://github.com/ksugahar/Hidemaru_macro.git .
 
 ```
 秀丸設定.reg
+OpenAsHidemarux64.reg
 ```
 を実行する。
 
