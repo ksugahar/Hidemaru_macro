@@ -2,11 +2,8 @@
 ---
 ## インストール
 ---
-ここのファイル
-```
-C:\Program Files\Hidemaru
-```
-フォルダに置く。
+git clone git@github.com:ksugahar/Hidemaru_macro.git .
+
 ```
 秀丸設定.reg
 ```
