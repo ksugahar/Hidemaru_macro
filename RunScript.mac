@@ -16,6 +16,9 @@ if (filetype==".cmd") {
 	runex "Python.exe \x22" + filename2 + "\x22", 0, 0, "", 7, "", 1, "",0 , "", 2, 0, 0;
 } else if (filetype==".m") {
 	run "RunMatlab.exe " + "\x22%d\x22 " + leftstr(basename2, strlen(basename2)-strlen(filetype));
+} else if (filetype==".mei") {
+//	runex "K:\\UWSC\\UWSC.exe \x22" + filename2 + "\x22", 0, 0, "", 7, "", 1, "",0 , "", 2, 0, 0;
+	run "RunScript.exe " + $PathDir + " C:\\ELF500\\bin\\mesh733.exe " + $PathInp;
 } else if (filetype==".uws") {
 //	runex "K:\\UWSC\\UWSC.exe \x22" + filename2 + "\x22", 0, 0, "", 7, "", 1, "",0 , "", 2, 0, 0;
 	run "RunScript.exe " + $PathDir + " K:\\UWSC\\UWSC.exe " + $PathInp;
